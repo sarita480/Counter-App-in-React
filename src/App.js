@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import FirstComponent from './components/FirstComponent';
+import FirstComponent, {SecondComponent} from './components/FirstComponent';
+
  
 class App extends Component {
   render() {
@@ -29,18 +30,18 @@ class App extends Component {
 //     );
 //   }
 // }
- class SecondComponent extends Component
-{
-  render()
-  {
-    return (
-      <div>
-        <h3>Hello Again</h3>
-      </div>
+//  class SecondComponent extends Component
+// {
+//   render()
+//   {
+//     return (
+//       <div>
+//         <h3>Hello Again</h3>
+//       </div>
 
-    ) ;
-  }
-}
+//     ) ;
+//   }
+// }
 //This is a function compoonent
 //Better practice is to define each component in its own module(In javaScript every file is called module)
 function ThirdComponent()
