@@ -1,4 +1,4 @@
-import React ,{Component} from "react";
+import React ,{Component} from "react"
 
 export default class FirstComponent extends Component
 {
@@ -11,14 +11,4 @@ export default class FirstComponent extends Component
     );
   }
 }
-export class SecondComponent extends Component
-{
-  render()
-  {
-    return (
-      <div>
-        This is my second component.
-      </div>
-    );
-  }
-}
+

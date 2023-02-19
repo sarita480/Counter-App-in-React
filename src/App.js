@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import FirstComponent, {SecondComponent} from './components/FirstComponent';
+import FirstComponent from './components/FirstComponent';
+import SecondComponent from './components/SecondComponent';
+import ThirdComponent from './components/ThirdComponent';
+import Counter from './components/Counter/Counter';
+import Counter1 from './components/Counter/Counter1';
+
 
  
 class App extends Component {
   render() {
     return (
-      <div className="App">
-      <h1>Hello</h1>
-      <FirstComponent/>
-      <SecondComponent/>
-      <ThirdComponent />
-
-      </div>
+      <Counter1></Counter1>
+      
     );
   }
 }
@@ -44,14 +44,30 @@ class App extends Component {
 // }
 //This is a function compoonent
 //Better practice is to define each component in its own module(In javaScript every file is called module)
-function ThirdComponent()
-{
-  return (
-    <div>
-      <h4>Hello this is fourth class component. </h4>
-    </div>
-  );
+// function ThirdComponent()
+// {
+//   return (
+//     <div>
+//       <h4>Hello this is fourth class component. </h4>
+//     </div>
+//   );
 
+// }
+
+class LearningComponent extends Component
+{
+  render()
+  {
+  return(
+    <div className="LearningComponent">
+      <h1>Hello</h1>
+      <FirstComponent/>
+      <SecondComponent/>
+      <ThirdComponent />
+      </div>
+
+  );
+}
 }
 export default App;
 
