@@ -4,17 +4,16 @@ import './App.css';
 import FirstComponent from './components/FirstComponent';
 import SecondComponent from './components/SecondComponent';
 import ThirdComponent from './components/ThirdComponent';
-import Counter from './components/Counter/Counter';
-import Counter1 from './components/Counter/Counter1';
+import Counter from './components/Counter/Counter1';
+
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <Counter1 by={1}></Counter1>
-      <Counter1 by={5}></Counter1>
-      <Counter1 by ={10}></Counter1>
+      <Counter></Counter>
+      
       </div>
     
       

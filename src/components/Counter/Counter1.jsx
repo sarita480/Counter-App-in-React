@@ -2,9 +2,21 @@ import { Component } from "react";
 import './Counter.css'
 import propsTypes from 'prop-types'
 
-
-
 class Counter extends Component{
+    render() {
+        return (
+          <div className="Counter">
+          <CounterButton by={1}></CounterButton>
+          <CounterButton by={5}></CounterButton>
+          <CounterButton by ={10}></CounterButton>
+          </div>
+        
+          
+        );
+}
+}
+
+class CounterButton extends Component{
     
     constructor()
     {
