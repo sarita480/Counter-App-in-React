@@ -8,11 +8,15 @@ import Counter from './components/Counter/Counter';
 import Counter1 from './components/Counter/Counter1';
 
 
- 
 class App extends Component {
   render() {
     return (
-      <Counter1></Counter1>
+      <div className="App">
+      <Counter1 by={1}></Counter1>
+      <Counter1 by={5}></Counter1>
+      <Counter1 by ={10}></Counter1>
+      </div>
+    
       
     );
   }

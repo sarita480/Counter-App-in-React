@@ -1,5 +1,6 @@
 import { Component } from "react";
 import './Counter.css'
+import propsTypes from 'prop-types'
 
 
 
@@ -18,8 +19,9 @@ class Counter extends Component{
         return(
             
                 <div className="counter1"> 
-                <button onClick={this.increment} >+1</button>
+                <button onClick={this.increment} >+{this.props.by}</button>
                 <span className="count">{this.state.counter1}</span>
+            
                 </div>
             
         )
@@ -28,8 +30,15 @@ class Counter extends Component{
     increment()
     {
         this.setState({
-            counter1:this.state.counter1+1
+            counter1:this.state.counter1+this.props.by
     })
     }
+}
+Counter.defaultProps={
+    by:1
+}
+Counter.propsTypes=
+{
+    by:propsTypes.number
 }
 export default Counter
