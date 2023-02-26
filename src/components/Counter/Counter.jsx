@@ -1,41 +1,75 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import './Counter.css'
+import propsTypes from 'prop-types'
+import './bootstrap.css'
 
+class Counter extends Component{
 
-class Counter extends Component
-{
     constructor()
-{
-    //Don't forget to call super.
-    super();
-    this.state =
     {
-        counter : 0
+        super();
+        this.state=
+        {
+            counter : 0
+        }
+        this.increment =this.increment.bind(this)
     }
-    this.increment = this.increment.bind(this);
+    render() {
+        return (
+          <div className="Counter">
+             <CounterButton by={1} incrementMethod={this.increment}></CounterButton>
+          </div>
+        
+          
+        );
 }
-    render()
-    { 
-    return
-    (
-           <div className="counter">
-                <button onClick={this.increment} >+1</button>
-                <span className="count">{this.state.counter}</span>   
-            </div>
-    );
-}
-//Once we mover our funciton inside the Component we don't need to use function keyword and if you want to call locally defined method you need to
-//use this keyword
-//to use method inside the component we need to bind this method to int component constructor
-increment()
+increment(by)
 {
-    //Console.log("incremented")
-   // this.state.counter++ //Bad practice (in react you don't update the state direclty)
-   //you need to pass an object to setState method to update the state
-   this.setState({
-        counter: this.state.counter+1
-    });
+    this.setState({
+       counter:this.state.counter+by
+   //  console.log(`Increment from parent -${by}`)
+     
+})
 }
 }
 
+class CounterButton extends Component
+{
+  constructor()
+    {
+        super();
+        this.state={
+            counter : 0
+        }
+        this.increment =this.increment.bind(this)
+    }
+    render()
+    {
+        return(
+            
+                <div className="counter1"> 
+                    <button onClick={this.increment}>+{this.props.by}</button>
+                    <span className="count">{this.state.counter}</span>
+                
+                </div>
+            
+        )
+    }
+
+    increment()
+    {
+        this.setState({
+            counter:this.state.counter+this.props.by
+
+    });
+    this.props.incrementMethod(this.props.by)
+    }
+}
+Counter.defaultProps={
+    by:1
+}
+Counter.propsTypes=
+{
+    by:propsTypes.number
+}
 export default Counter
